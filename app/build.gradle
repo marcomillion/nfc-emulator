@@ -6,11 +6,22 @@ plugins {
 android {
     namespace 'com.tapforge.v2'
     compileSdk 35
+
     defaultConfig {
         applicationId 'com.tapforge.v2'
         minSdk 23
         targetSdk 35
         versionCode 1
         versionName '2.0.0'
+    }
+
+    // Keep Java and Kotlin bytecode targets aligned for the GitHub Actions build.
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_17
+        targetCompatibility JavaVersion.VERSION_17
+    }
+
+    kotlinOptions {
+        jvmTarget = '17'
     }
 }
